@@ -15,7 +15,7 @@ export default function Home({ data }) {
       currentText.length === data[exampleIndex].word.length &&
       exampleIndex !== data.length - 1
     ) {
-      console.log('here')
+      console.log("here");
       setEnteredText("");
       setExampleIndex((prevIndex) => prevIndex + 1);
     }
@@ -39,17 +39,15 @@ export default function Home({ data }) {
         height={300}
         width={250}
       />
-      <audio src={`/sounds/${data[exampleIndex].sound}`} controls />
+      <audio className="mt-2" src={`/sounds/${data[exampleIndex].sound}`} controls />
       <h2 className="font-bold">{data[exampleIndex].word}</h2>
       <p>{data[exampleIndex].meaning}</p>
-      <form>
-        <input
-          onChange={handleChange}
-          value={enteredText}
-          className={`border-4 ${borderColor} focus:outline-none text-center`}
-          type="text"
-        />
-      </form>
+      <input
+        onChange={handleChange}
+        value={enteredText}
+        className={`border-4 ${borderColor} focus:outline-none text-center rounded-xl`}
+        type="text"
+      />
     </section>
   );
 }
